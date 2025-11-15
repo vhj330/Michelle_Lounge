@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michelle's Virtual Cigar Lounge | Ash & Diamonds</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Language Toggle */
+        .language-toggle {
+            text-align: right;
+            padding: 20px;
+            background-color: #0a0a0a;
+        }
+
+        .language-toggle button {
+            background: none;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .language-toggle button:hover,
+        .language-toggle button.active {
+            background-color: #d4af37;
+            color: #0a0a0a;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 80px;
+        }
+
+        .hero-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #d4af37;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #d4af37;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            color: #cccccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #0a0a0a;
+            padding: 18px 45px;
+            margin-top: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 2px solid #d4af37;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #d4af37;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #d4af37;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        /* How It Works */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-number {
+            font-size: 3em;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .step h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #f5f5f5;
+        }
+
+        .step p {
+            color: #cccccc;
+            font-size: 1.1em;
+        }
+
+        /* Pricing */
+        .pricing-box {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 2px solid #d4af37;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .price {
+            font-size: 3.5em;
+            color: #d4af37;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            font-size: 1.2em;
+            color: #cccccc;
+        }
+
+        .pricing-features li:before {
+            content: "✓ ";
+            color: #d4af37;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .coming-soon {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: #999;
+            font-style: italic;
+        }
+
+        /* FAQ */
+        .faq-item {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            padding: 25px;
+            border-left: 3px solid #d4af37;
+            background-color: rgba(212, 175, 55, 0.05);
+        }
+
+        .faq-item h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .faq-item p {
+            color: #cccccc;
+            font-size: 1.1em;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .final-cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #999;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .brand-name {
+            color: #d4af37;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .hero-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .price {
+                font-size: 2.5em;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Hide/Show language content */
+        .lang-es {
+            display: none;
+        }
+
+        body.spanish .lang-en {
+            display: none;
+        }
+
+        body.spanish .lang-es {
+            display: block;
+        }
+
+        body.spanish .lang-es.inline {
+            display: inline;
+        }
+
+        .lang-es.inline {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button onclick="setLanguage('en')" class="active" id="btn-en">🇺🇸 English</button>
+        <button onclick="setLanguage('es')" id="btn-es">🇪🇸 Español</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- Replace src with Michelle's photo -->
+            <img src="https://via.placeholder.com/300" alt="Michelle" class="hero-image">
+            
+            <h1>
+                <span class="lang-en">Join Michelle's Virtual Cigar Lounge</span>
+                <span class="lang-es">Únete al Salón Virtual de Puros de Michelle</span>
+            </h1>
+            
+            <p>
+                <span class="lang-en">Intimate weekly conversations in Spanish.</span>
+                <span class="lang-es">Conversaciones semanales íntimas en español.</span>
+            </p>
+            
+            <p>
+                <span class="lang-en">Every Wednesday at 9pm Eastern.</span>
+                <span class="lang-es">Todos los miércoles a las 9pm hora del Este.</span>
+            </p>
+            
+            <a href="#" class="cta-button">
+                <span class="lang-en">Join the Lounge - $79/month</span>
+                <span class="lang-es">Únete al Salón - $79/mes</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2>
+                <span class="lang-en">How It Works</span>
+                <span class="lang-es">Cómo Funciona</span>
+            </h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>
+                        <span class="lang-en">Join the Lounge</span>
+                        <span class="lang-es">Únete al Salón</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Select your membership and complete signup</span>
+                        <span class="lang-es">Selecciona tu membresía y completa el registro</span>
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>
+                        <span class="lang-en">Get Your Welcome</span>
+                        <span class="lang-es">Recibe tu Bienvenida</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Receive Zoom link and schedule</span>
+                        <span class="lang-es">Recibe el enlace de Zoom y el horario</span>
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>
+                        <span class="lang-en">Prepare for the Call</span>
+                        <span class="lang-es">Prepárate para la Llamada</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Grab your favorite cigar and drink</span>
+                        <span class="lang-es">Toma tu puro y bebida favorita</span>
+                    </p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>
+                        <span class="lang-en">Join the Conversation</span>
+                        <span class="lang-es">Únete a la Conversación</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Meet Michelle and the group every Wednesday</span>
+                        <span class="lang-es">Conoce a Michelle y al grupo cada miércoles</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <div class="container">
+            <h2>
+                <span class="lang-en">Pricing</span>
+                <span class="lang-es">Precios</span>
+            </h2>
+            
+            <div class="pricing-box">
+                <div class="price">$79<span style="font-size: 0.4em; color: #999;">/<span class="lang-en">month</span><span class="lang-es">mes</span></span></div>
+                
+                <ul class="pricing-features">
+                    <li>
+                        <span class="lang-en">Weekly 90-minute video sessions</span>
+                        <span class="lang-es">Sesiones de video semanales de 90 minutos</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Every Wednesday at 9pm Eastern</span>
+                        <span class="lang-es">Todos los miércoles a las 9pm hora del Este</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Conversations in Spanish</span>
+                        <span class="lang-es">Conversaciones en español</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">BYOB & Bring your own cigar</span>
+                        <span class="lang-es">Trae tu propia bebida y puro</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="cta-button">
+                    <span class="lang-en">Join the Lounge - $79/month</span>
+                    <span class="lang-es">Únete al Salón - $79/mes</span>
+                </a>
+                
+                <div class="coming-soon">
+                    <span class="lang-en">Optional: Premium cigar box delivery (Coming soon)</span>
+                    <span class="lang-es">Opcional: Entrega de caja de puros premium (Próximamente)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2>
+                <span class="lang-en">Frequently Asked Questions</span>
+                <span class="lang-es">Preguntas Frecuentes</span>
+            </h2>
+            
+            <div class="faq-item">
+                <h3>
+                    <span class="lang-en">Do I need to be on camera?</span>
+                    <span class="lang-es">¿Necesito estar en cámara?</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Optional but encouraged for the best experience.</span>
+                    <span class="lang-es">Opcional pero recomendado para la mejor experiencia.</span>
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>
+                    <span class="lang-en">What if I don't have a cigar?</span>
+                    <span class="lang-es">¿Qué pasa si no tengo un puro?</span>
+                </h3>
+                <p>
+                    <span class="lang-en">No problem! Bring any drink you enjoy. The conversation is what matters.</span>
+                    <span class="lang-es">¡No hay problema! Trae cualquier bebida que disfrutes. Lo que importa es la conversación.</span>
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>
+                    <span class="lang-en">Is this only in Spanish?</span>
+                    <span class="lang-es">¿Esto es solo en español?</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Yes, conversations are primarily in Spanish.</span>
+                    <span class="lang-es">Sí, las conversaciones son principalmente en español.</span>
+                </p>
+            </div>
+
+            <div class="faq-item">
+                <h3>
+                    <span class="lang-en">Can I cancel anytime?</span>
+                    <span class="lang-es">¿Puedo cancelar en cualquier momento?</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Yes, cancel anytime with no penalties.</span>
+                    <span class="lang-es">Sí, puedes cancelar en cualquier momento sin penalizaciones.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>
+                <span class="lang-en">Ready to join the conversation?</span>
+                <span class="lang-es">¿Listo para unirte a la conversación?</span>
+            </h2>
+            
+            <a href="#" class="cta-button">
+                <span class="lang-en">Join Michelle's Lounge - $79/month</span>
+                <span class="lang-es">Únete al Salón de Michelle - $79/mes</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="brand-name">Ash & Diamonds</p>
+            <p>
+                <span class="lang-en">Questions?</span>
+                <span class="lang-es">¿Preguntas?</span>
+                <a href="mailto:contact@ashanddiamonds.co">contact@ashanddiamonds.co</a>
+            </p>
+            <p>21+ <span class="lang-en">Only</span><span class="lang-es">Solamente</span></p>
+        </div>
+    </footer>
+
+    <script>
+        function setLanguage(lang) {
+            const body = document.body;
+            const btnEn = document.getElementById('btn-en');
+            const btnEs = document.getElementById('btn-es');
+            
+            if (lang === 'es') {
+                body.classList.add('spanish');
+                btnEs.classList.add('active');
+                btnEn.classList.remove('active');
+            } else {
+                body.classList.remove('spanish');
+                btnEn.classList.add('active');
+                btnEs.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>
