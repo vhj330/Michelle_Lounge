@@ -222,6 +222,67 @@
             color: #d4af37;
         }
 
+        /* Policies Section */
+        .policies {
+            background: #000;
+            padding: 60px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .policies h2 {
+            color: #d4af37;
+            font-size: 2em;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 300;
+        }
+
+        .policy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .policy-item {
+            padding: 25px;
+            border-left: 3px solid #d4af37;
+            background-color: rgba(212, 175, 55, 0.03);
+        }
+
+        .policy-item h3 {
+            color: #d4af37;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .policy-item p {
+            color: #999;
+            font-size: 0.95em;
+            line-height: 1.7;
+        }
+
+        .policy-footer {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .policy-footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .policy-footer a:hover {
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -275,6 +336,10 @@
             .steps {
                 grid-template-columns: 1fr;
             }
+
+            .policy-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Hide/Show language content */
@@ -309,7 +374,6 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <!-- Replace src with Michelle's photo -->
             <img src="https://via.placeholder.com/300" alt="Michelle" class="hero-image">
             
             <h1>
@@ -506,6 +570,70 @@
         </div>
     </section>
 
+    <!-- Policies Section (NEW - Required for Stripe) -->
+    <section class="policies">
+        <div class="container">
+            <h2>
+                <span class="lang-en">MEMBERSHIP POLICIES</span>
+                <span class="lang-es">POLÍTICAS DE MEMBRESÍA</span>
+            </h2>
+            
+            <div class="policy-grid">
+                <div class="policy-item">
+                    <h3>
+                        <span class="lang-en">CANCELLATION POLICY</span>
+                        <span class="lang-es">POLÍTICA DE CANCELACIÓN</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">You may cancel your membership at any time. Cancellations take effect at the end of your current billing period. No refunds will be issued for the remaining days in your current billing cycle. To cancel, email contact@ashanddiamonds.co or manage your subscription through your Stripe customer portal.</span>
+                        <span class="lang-es">Puedes cancelar tu membresía en cualquier momento. Las cancelaciones toman efecto al final de tu período de facturación actual. No se emitirán reembolsos por los días restantes en tu ciclo de facturación actual. Para cancelar, envía un correo a contact@ashanddiamonds.co o administra tu suscripción a través de tu portal de cliente de Stripe.</span>
+                    </p>
+                </div>
+
+                <div class="policy-item">
+                    <h3>
+                        <span class="lang-en">REFUND POLICY</span>
+                        <span class="lang-es">POLÍTICA DE REEMBOLSOS</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">All membership fees are non-refundable once the billing period has begun. We do not offer prorated refunds for partial months. In exceptional circumstances, please contact us at contact@ashanddiamonds.co to discuss your situation.</span>
+                        <span class="lang-es">Todas las tarifas de membresía no son reembolsables una vez que el período de facturación ha comenzado. No ofrecemos reembolsos prorrateados por meses parciales. En circunstancias excepcionales, contáctanos en contact@ashanddiamonds.co para discutir tu situación.</span>
+                    </p>
+                </div>
+
+                <div class="policy-item">
+                    <h3>
+                        <span class="lang-en">TERMS OF SERVICE</span>
+                        <span class="lang-es">TÉRMINOS DE SERVICIO</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">Membership is limited to individuals 21 years of age or older. Sessions are conducted via Zoom video conference. By subscribing, you agree to participate respectfully and adhere to community guidelines. We reserve the right to terminate memberships for disruptive behavior without refund. Your payment information is securely processed by Stripe. We do not store credit card details.</span>
+                        <span class="lang-es">La membresía está limitada a individuos de 21 años o más. Las sesiones se realizan vía videoconferencia Zoom. Al suscribirte, aceptas participar respetuosamente y adherirte a las pautas de la comunidad. Nos reservamos el derecho de terminar membresías por comportamiento disruptivo sin reembolso. Tu información de pago es procesada de forma segura por Stripe. No almacenamos detalles de tarjetas de crédito.</span>
+                    </p>
+                </div>
+
+                <div class="policy-item">
+                    <h3>
+                        <span class="lang-en">PRIVACY & DATA</span>
+                        <span class="lang-es">PRIVACIDAD Y DATOS</span>
+                    </h3>
+                    <p>
+                        <span class="lang-en">We collect only the information necessary to provide our service: name, email, and payment details (processed securely by Stripe). We do not sell or share your personal information with third parties. Session recordings are not made without explicit consent from all participants.</span>
+                        <span class="lang-es">Recopilamos solo la información necesaria para proporcionar nuestro servicio: nombre, correo electrónico y detalles de pago (procesados de forma segura por Stripe). No vendemos ni compartimos tu información personal con terceros. No se realizan grabaciones de sesiones sin el consentimiento explícito de todos los participantes.</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="policy-footer">
+                <p>
+                    <span class="lang-en">Questions about our policies? Contact us at</span>
+                    <span class="lang-es">¿Preguntas sobre nuestras políticas? Contáctanos en</span>
+                    <a href="mailto:contact@ashanddiamonds.co">contact@ashanddiamonds.co</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -516,6 +644,7 @@
                 <a href="mailto:contact@ashanddiamonds.co">contact@ashanddiamonds.co</a>
             </p>
             <p>21+ <span class="lang-en">Only</span><span class="lang-es">Solamente</span></p>
+            <p style="margin-top: 15px; font-size: 0.9em;">© 2025 Ash & Diamonds Cigar Club. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
